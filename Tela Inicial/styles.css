@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: tomato;
+    background-image: url("mulheres-felizes.png");
+}
+
+.text-block {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pagina-inicial {
+    grid-template-rows: auto;
+    row-gap: 0px;
+    -webkit-box-align: center;
+    align-items: center;
+    grid-template-columns: repeat(12, minmax(0px, 1fr));
+    padding-left: 56px;
+    padding-right: 56px;
+    gap: 48px 32px;
+    display: grid;
+    width: 100%;
+}
+
+.padding-110 {
+    padding: 110px;
+
+
+}
+
+/* .texto-head {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
+    font-weight: 520;
+    color: rgb(0, 0, 0);
+    font-size: 34px;
+    border: 1px solid rgb(255, 252, 252);
+    border-radius: 100px;
+    padding: 5px;
+    width: 630px;
+
+    
+} */
+
+.texto-lateral {
+    grid-column: 1 / span 5;
+
+}
+
+.mx-470 {
+    max-width: 470px;
+}
+
+.texto-principal {
+    font-size: 43px;
+    line-height: 1.70;
+    text-align: left;
+    font-family: Didot, serif;
+    margin: 0px;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: rgb(0, 0, 0);
+    border: 2px solid white;
+    border-radius: 45px;
+    padding: 40px;
+    background-color: white;
+
+
+}
+
+.texto-lateral-direita {
+    grid-column: 9 / span 4;
+    align-self: auto;
+}
+
+.texto-direita {
+    width: 100%;
+}
+
+.caixa {
+    margin-right: 0px;
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 255);
+    max-width: 20.625rem;
+    margin: auto;
+}
+
+.caixa-texto {
+    font-size: 1.5rem;
+    line-height: 1.32;
+    font-family: Graphik-Medium, Graphik-Regular, "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0px 0px 32px;
+    color: rgb(17, 17, 17);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.submit {
+    color: rgba(17, 17, 17, 0.2);
+    background: rgba(17, 17, 17, 0.1);
+    cursor: pointer;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border-radius: 6.25rem;
+    --rippleLayerColor: rgba(255, 255, 255, 0.2);
+    height: 3rem;
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+    /* -webkit-box-pack: justify; */
+    justify-content: space-between;
+    outline: 0px;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+    border: 0px;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.button-login {
+    pointer-events: pointer;
+    position: relative;
+    z-index: 2;
+    font-family: Graphik-Medium, Graphik-Regular, "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0px;
+    color: inherit;
+    letter-spacing: -0.01em;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.caixa-login{
+    pointer-events: pointer;
+    position: relative;
+    z-index: 2;
+    font-family: Graphik-Medium, Graphik-Regular, "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0px;
+    color: inherit;
+    letter-spacing: -0.01em;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.seta-login {
+    pointer-events: pointer;
+    position: relative;
+    z-index: 2;
+    margin-left: 0.5rem;
+}
