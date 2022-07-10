@@ -108,7 +108,7 @@ body {
 }
 
 .submit {
-    color: rgba(17, 17, 17, 0.2);
+    color: rgba(17, 17, 17);
     background: rgba(17, 17, 17, 0.1);
     cursor: pointer;
     padding-left: 1.25rem;
