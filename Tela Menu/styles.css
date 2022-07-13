@@ -1,7 +1,6 @@
 * {
     margin: 0.38;
     padding: 0;
-
 }
 
 body {
@@ -9,37 +8,39 @@ body {
     font-size: 12px;
 }
 
-.menu {
+.cabecalho {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
     flex-wrap: wrap;
-    margin: 1.5em
+    margin: 1.5em;
+    height: 100px;
 }
 
-
-.menu li {
+.menu {
     list-style: none;
-    position: relative;
-    float: left;
+    display: flex;
+    flex-direction: row;
     z-index: 2;
+    margin-bottom: 0;
 }
 
-.menu li a {
+.btn-menu {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
+    width: 180px;
     height: 35px;
     color: rgb(7, 7, 7);
     text-decoration: none;
     transition: color 0.2s;
-    font-family: Trebuchet MS;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     background-color: #ee7f8e;
     border-radius: 50px;
     margin-right: 5px;
+    padding: 0 3px;
 }
 
 .menu li a:hover {
@@ -48,17 +49,6 @@ body {
     -moz-box-shadow: 0 3px 10px 0 #CCC;
     box-shadow: 0 3px 10px 0 #ccc;
     text-shadow: 0px 0px 5px #fff;
-}
-
-.menu li:hover ul,
-.menu li.over ul {
-    display: block;
-}
-
-.menu li ul li {
-    border: 1px solid #c0c0c0;
-    display: block;
-    width: 150px;
 }
 
 .background-body {
@@ -71,7 +61,127 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: -1;
     overflow-x: hidden;
 }
 
+.num-usuario {
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* z-index: 0; */
+    background-color: #ee7f8e;
+    border-radius: 50px;
+    margin-right: 5px;
+}
+
+.btn-menu-circle {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #ee7f8e;
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    font-size: 25px;
+}
+
+.perfil {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1.5em;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    flex-wrap: wrap;
+    box-shadow: none;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 133px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    background-color: #ee7f8e;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 50px;
+    display: block;
+    margin-top: 2px;
+    text-align: center;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background: #333;
+    color: #fff;
+    -moz-box-shadow: 0 3px 10px 0 #CCC;
+    box-shadow: 0 3px 10px 0 #ccc;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Corpo */
+.corpo {
+    display: flex;
+    height: 100vh;
+    width: 99vw;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 10px 20px;
+    flex: 1;
+    
+}
+
+.conteudo {
+    height: 80%;
+    /* margin: 0; */
+}
+
+.teste1 {
+    background-color: darkturquoise;
+    display: none;
+    height: 25%;
+}
+
+.teste2 {
+    background-color: lawngreen;
+    display: none;
+    height: 25%;
+}
+
+.teste3 {
+    background-color: gold;
+    display: none;
+    height: 25%;
+}
+
+.teste4 {
+    background-color: black;
+    display: none;
+    height: 25%;
+}
