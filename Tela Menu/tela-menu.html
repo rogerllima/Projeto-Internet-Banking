@@ -40,13 +40,16 @@
     <!-- Perfil -->
     <div>
       <div class="perfil">
-        <div class="perfil-item" id="nome"></div>
+        <div class="perfil-item">
+          <span>Nome:</span>
+          <span id="nome"></span>
+        </div>
         <div class="perfil-item" id="conta"></div>
         <div class="perfil-item" id="saldo"></div>
         <div class="dropdown">
           <button class="btn-menu-circle fa-solid fa-user "></button>
           <div class="dropdown-content">
-            <a type="button" href="#">Editar Usuário</a>
+            <a type="button" href="#" onclick="mostrarEditarPerfil()">Editar Usuário</a>
             <a type="button" href="#">Informações da Conta</a>
             <a type="button" id="logout" href="#" onclick="efetuarLogout()">Sair</a>
           </div>
@@ -64,26 +67,30 @@
       <!-- Conteudos -->
       <div class="painel" id="testeId1" style="display: none;">
         <!-- Formulário Empréstimo -->
-        <div >
+        <div>
           <form id="form-emprestimo" name="form">
-            <h3 class="head-form">Simulador de Empréstimo</h3>
-            <div class="modelo-form">
-              <label for="valor" >Valor do Empréstimo: R$</label>
-              <input type='text'  id="valorEmprestimo"/> 
+            <div class="cabecalho-form-emprestimo">
+              <h3 class="head-form">Simulador de Empréstimo</h3>
+              <p class="explicacao-emprestimo">Nosso banco ultiliza taxa de juros de 3,14%(a.m.)</p>
             </div>
             <div class="modelo-form">
-              <label for="parcelas" >Número de parcelas :</label>
-              <input type="text" id="parcelasEmprestimo" /> 
+              <label for="valor">Valor do Empréstimo: R$</label>
+              <input type='text' class="modelo-form" id="valorEmprestimo" />
             </div>
             <div class="modelo-form">
-              <label for="valorComJuros" >Valor Total com Juros:</label>
-              <label for="teste" id="valorSimulado" >R$</label>
+              <label for="parcelas">Número de parcelas :</label>
+              <input type="text" class="modelo-form" id="parcelasEmprestimo" />
             </div>
             <div class="modelo-form">
-              <label for="valorParcela" >Valor das Parcelas:</label>
-              <label for="teste" id="valorParcela" >R$</label>
+              <label for="valorComJuros">Valor Total com Juros:</label>
+              <label for="teste" id="valorSimulado">R$</label>
             </div>
-            <input type="button" id="submitButton" value="Simular" onclick="simularEmprestimo()" class="botao-simular"/>
+            <div class="modelo-form">
+              <label for="valorParcela">Valor das Parcelas:</label>
+              <label for="teste" id="valorParcela">R$</label>
+            </div>
+            <input type="button" id="submitButton" value="Simular" onclick="simularEmprestimo()"
+              class="botao-simular" />
           </form>
         </div>
         <!-- Fim Formulário Empréstimo -->
@@ -146,13 +153,34 @@
       <div class="painel" id="testeId3" style="display: none;"></div>
       <div class="painel" id="testeId4" style="display: none;"></div>
     </div>
+    <!-- Painel Editar Perfil -->
+    <div id="editar-perfil" style="display: none;">
+      <form id="form-editar-perfil" name="form-perfil">
+        <h3 class="head-form">Editar Perfil</h3>
+        <div class="modelo-form">
+          <label for="nome">Insira seu nome:</label>
+          <input type='text' id="nomeUsuario" />
+        </div>
+        <div class="modelo-form">
+          <label for="email">Insira seu email :</label>
+          <input type="email" id="emailUsuario" />
+        </div>
+        <div class="modelo-form">
+          <label for="data-nascimento">Data de Nascimento:</label>
+          <input for="teste" type="date" id="dataNasc">
+          </input>
+        </div>
+        <input type="button" id="submitButton" value="Salvar" onclick="editarPerfil()+teste()" class="botao-simular" />
+      </form>
+    </div>
+    <!-- Fim Painel Editar Perfil -->
     <!-- Fim Painel -->
   </div>
   <!-- Fim Corpo -->
   <div class="background-body">
 
 </body>
-<script src="../Tela Login/index.js"></script>
+<script src="index.js"></script>
 
 
 </html>
