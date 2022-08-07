@@ -65,3 +65,46 @@ form input[type=button] {
 form input[type=button]:hover {
     background-color: #f35b95;
 }
+
+.form-criacao-usuario {
+    flex-direction: column;
+}
+
+.cabecalho-criacao {
+    margin-bottom: 25px;
+    display: block;
+
+}
+
+.registerbtn {
+    background-color: #ee7f8e;
+    border: 1px solid white;
+    color: white;
+    padding: 16px 40px 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 0;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.registerbtn:hover {
+    background-color: #f35b95;
+
+}
+
+.btn-close {
+    font-size: 30px;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+}
+
+#criarUsuario {
+    margin: 2px;
+    border-color: #ee7f8e;
+}

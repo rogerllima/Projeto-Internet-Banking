@@ -8,12 +8,51 @@
 
 <body>
     <h1 class="title">BD BANCO DELAS </h1>
-    <form>
+    <form id="form-user" name="form">
         <h3>Acessar Conta</h3>
-        <input type="text" name="numeroConta" placeholder="Seu numero da conta..." />
-        <input type="password" name="senha" placeholder="Sua senha...">
-        <input type="button" class="submit" onclick="location.href='../Tela Menu/tela-menu.html'" name="acao" value="Entrar "/>
+        <input type="text" name="numeroConta" id="numConta" onkeyup="validateForm()"
+            placeholder="Seu numero da conta..."></input>
+        <input type="password" name="senha" id="senha" onkeyup="validateForm()" placeholder="Sua senha...">
+        <input type="button" id="criarUsuario" onclick="mostrarFormRegistro()"
+            value="Não tem conta? Registre-se"></input>
+        <input type="button" id="submitButton" disabled onclick="efetuarLogin()" name="acao" value="Entrar "></input>
     </form>
+    <!-- Form de Registro -->
+    <div id="form-registro" style="display: none;">
+        <form class="form-criacao-usuario">
+            <div>
+                <div class="cabecalho-criacao">
+                    <h1>Registro</h1>
+                    <p>Por favor preencha o formulário para criar a conta.</p>
+                    <hr>
+                    <button type="button" class="btn-close" id="fecharRegistro" onclick="fecharPagina('form-registro')">
+                        &times;</button>
+                </div>
+                <label for="name"><b>Nome</b></label>
+                <input type="text" placeholder="Insira seu nome" name="nome" id="novoNome" onkeyup="validarRegistro()"
+                    required></input>
+
+                <label for="data-nascimento"><b>Data de Nascimento</b></label>
+                <input for="data" type="date" id="dataNascimento" onkeyup="validarRegistro()" required></input>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Insira o email" name="email" id="novoEmail" onkeyup="validarRegistro()"
+                    required></input>
+
+                <label for="psw"><b>Senha</b></label>
+                <input type="password" placeholder="Insira a senha" name="psw" id="novaSenha"
+                    onkeyup="validarRegistro()" required></input>
+
+                <label for="psw-repeat"><b>Repita a Senha</b></label>
+                <input type="password" placeholder="Repita a senha" name="psw-repeat" id="novaSenhaRepetida"
+                    onkeyup="validarRegistro()" required></input>
+                <hr>
+                <button type="button" id="btnEnviarRegistro" class="registerbtn" disabled
+                    onclick="registrarUsuario()">Registrar</button>
+            </div>
+        </form>
+    </div>
 </body>
+<script src="index.js"></script>
 
 </html>

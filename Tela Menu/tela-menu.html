@@ -3,31 +3,184 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Banco Delas</title>
-    <!-- Aqui chamamos o nosso arquivo css externo -->
-    <link rel="stylesheet" type="text/css" href="estilo.css" />
-    <!--[if lte IE 8]>
- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
- <![endif]-->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banco Delas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
-    <nav>
+  <!-- Cabeçalho -->
+  <div class="cabecalho">
+    <!-- Menu -->
+    <div>
+      <nav>
         <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">O que fazemos?</a>
-            <li><a href="#">Empréstimo</a></li>
-            <li><a id="extrato" href="#">Extrato Bancário</a></li>
-            <li><a href="#">Investimentos</a></li>
-            <li><a href="#">Cartão de Crédito</a></li>
-            <li><a href="#">Contato</a></li>
-
-            </li>
-
+          <li><a class="btn-menu" id="btn-emprestimo" onclick="mostrarConteudo('testeId1')" href="#">Empréstimo</a></li>
+          <li><a class="btn-menu" id="btn-extrato" onclick="mostrarConteudo('testeId2')" href="#">Extrato Bancário</a>
+          </li>
+          <li><a class="btn-menu" id="btn-investimento" onclick="mostrarConteudo('testeId3')" href="#">Investimentos</a>
+          </li>
+          <li><a class="btn-menu" id="btn-cartao" onclick="mostrarConteudo('testeId4')" href="#">Cartão de Crédito</a>
+          </li>
         </ul>
+    </div>
+    <!-- Perfil -->
+    <div>
+      <div class="perfil">
+        <div class="perfil-item">
+          <span>Nome:</span>
+          <span id="nome"></span>
+        </div>
+        <div class="perfil-item" id="conta"></div>
+        <div class="perfil-item" id="saldo"></div>
+        <div class="dropdown">
+          <button class="btn-menu-circle fa-solid fa-user "></button>
+          <div class="dropdown-content">
+            <a type="button" href="#" onclick="mostrarEditarPerfil()">Editar Usuário</a>
+            <a type="button" href="#">Informações da Conta</a>
+            <a type="button" id="logout" href="#" onclick="efetuarLogout()">Sair</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fim Perfil -->
     </nav>
+  </div>
+  <!-- Fim Cabeçalho -->
+  <!-- Corpo -->
+  <div class="corpo">
+    <!-- Painel -->
+    <div class="conteudo">
+      <!-- Conteudos -->
+      <div class="painel" id="testeId1" style="display: none;">
+        <!-- Formulário Empréstimo -->
+        <div>
+          <form id="form-emprestimo" name="form">
+            <div class="cabecalho-form-emprestimo">
+              <h3 class="head-form">Simulador de Empréstimo</h3>
+              <p class="explicacao-emprestimo">Nosso banco ultiliza taxa de juros de 3,14%(a.m.)</p>
+            </div>
+            <div class="modelo-form">
+              <label for="valor">Valor do Empréstimo: R$</label>
+              <input type='text' class="modelo-form" id="valorEmprestimo" />
+            </div>
+            <div class="modelo-form">
+              <label for="parcelas">Número de parcelas :</label>
+              <input type="text" class="modelo-form" id="parcelasEmprestimo" />
+            </div>
+            <div class="modelo-form">
+              <label for="valorComJuros">Valor Total com Juros:</label>
+              <label for="teste" id="valorSimulado">R$</label>
+            </div>
+            <div class="modelo-form">
+              <label for="valorParcela">Valor das Parcelas:</label>
+              <label for="teste" id="valorParcela">R$</label>
+            </div>
+            <input type="button" id="submitButton" value="Simular" onclick="simularEmprestimo()"
+              class="botao-simular" />
+          </form>
+        </div>
+        <!-- Fim Formulário Empréstimo -->
+      </div>
+      <div class="painel" id="testeId2" style="display: none;">
+        <!-- Tabela Extrato -->
+        <div class="extrato">
+          <table>
+            <thead class="modelo-extrato" style="font-weight: bold;">
+              <tr>
+                <td>Extrato Bancário</td>
+              </tr>
+            </thead>
+            <tr>
+              <th class="modelo-extrato">Data de Lançamento</th>
+              <th class="modelo-extrato">Nome</th>
+              <th class="modelo-extrato">Descrição</th>
+              <th class="modelo-extrato">Valor</th>
+              <th class="modelo-extrato">Saldo</th>
+            </tr>
+            <tr>
+              <td class="modelo-extrato">01/Jan</td>
+              <td class="modelo-extrato">RedHat</td>
+              <td class="modelo-extrato">Pagamento</td>
+              <td class="modelo-positivo modelo-extrato">+R$ 2000,00</td>
+              <td class="modelo-saldo-positivo modelo-extrato">R$ 2000,00</td>
+            </tr>
+            <tr>
+              <td class="modelo-extrato">03/Jan</td>
+              <td class="modelo-extrato">Enel</td>
+              <td class="modelo-extrato">Boleto Luz</td>
+              <td class="modelo-negativo modelo-extrato">-R$ 300,00</td>
+              <td class="modelo-saldo-positivo modelo-extrato">R$ 1700,00</td>
+            </tr>
+            <tr>
+              <td class="modelo-extrato">05/Jan</td>
+              <td class="modelo-extrato">Cagece</td>
+              <td class="modelo-extrato">Boleto Pago</td>
+              <td class="modelo-negativo modelo-extrato">-R$ 600,00</td>
+              <td class="modelo-saldo-positivo modelo-extrato">R$ 1100,00</td>
+            </tr>
+            <tr>
+              <td class="modelo-extrato">15/jan</td>
+              <td class="modelo-extrato">Banco Delas</td>
+              <td class="modelo-extrato">Cartão de Crédito</td>
+              <td class="modelo-negativo modelo-extrato">-R$ 800,00</td>
+              <td class="modelo-saldo-positivo modelo-extrato">R$ 300,00</td>
+            </tr>
+            <tr>
+              <td class="modelo-extrato">21/jan</td>
+              <td class="modelo-extrato">Black Gate</td>
+              <td class="modelo-extrato">Legal</td>
+              <td class="modelo-negativo modelo-extrato">-R$ 350,00</td>
+              <td class="modelo-negativo modelo-extrato">-R$ 50,00</td>
+            </tr>
+          </table>
+        </div>
+        <!-- Fim Tabela -->
+      </div>
+      <div class="painel" id="testeId3" style="display: none;"></div>
+      <div class="painel" id="testeId4" style="display: none;"></div>
+    </div>
+    <!-- Painel Editar Perfil -->
+    <div id="editar-perfil" style="display: none;">
+      <form id="form-editar-perfil" name="form-perfil">
+        <h3 class="head-form">Editar Perfil</h3>
+        <div class="modelo-form">
+          <label for="nome">Insira seu nome:</label>
+          <input type='text' id="nomeUsuario" />
+        </div>
+        <div class="modelo-form">
+          <label for="email">Insira seu email :</label>
+          <input type="email" id="emailUsuario" />
+        </div>
+        <div class="modelo-form">
+          <label for="data-nascimento">Data de Nascimento:</label>
+          <input for="teste" type="date" id="dataNasc">
+          </input>
+        </div>
+        <input type="button" id="submitButton" value="Salvar" onclick="editarPerfil()+teste()" class="botao-simular" />
+      </form>
+    </div>
+    <!-- Fim Painel Editar Perfil -->
+    <!-- Fim Painel -->
+  </div>
+  <!-- Fim Corpo -->
+  <div class="background-body">
+
 </body>
+<script src="index.js"></script>
+
 
 </html>

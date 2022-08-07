@@ -34,23 +34,8 @@ body {
 
 .padding-110 {
     padding: 110px;
-
-
 }
 
-/* .texto-head {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0px;
-    font-weight: 520;
-    color: rgb(0, 0, 0);
-    font-size: 34px;
-    border: 1px solid rgb(255, 252, 252);
-    border-radius: 100px;
-    padding: 5px;
-    width: 630px;
-
-    
-} */
 
 .texto-lateral {
     grid-column: 1 / span 5;
@@ -108,7 +93,7 @@ body {
 }
 
 .submit {
-    color: rgba(17, 17, 17, 0.2);
+    color: rgba(17, 17, 17);
     background: rgba(17, 17, 17, 0.1);
     cursor: pointer;
     padding-left: 1.25rem;

@@ -1,43 +1,46 @@
 * {
     margin: 0.38;
     padding: 0;
-    
 }
 
 body {
     font-family: arial, helvetica, sans-serif;
     font-size: 12px;
-    background-image: url("celular-banco4.png");
+}
+
+.cabecalho {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1.5em;
+    height: 100px;
 }
 
 .menu {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
-    box-sizing: border-box;
-
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+    margin-bottom: 0;
 }
 
-.menu li {
-    position: relative;
-    float: left;
-    border-right: 1px solid #c0c0c0;
-}
-
-.menu li a {
-    display: block;
+.btn-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 35px;
     color: rgb(7, 7, 7);
     text-decoration: none;
     transition: color 0.2s;
-    font-family: Trebuchet MS;
-    text-transform: uppercase;
-    padding: 83px ;
+    /* text-transform: uppercase; */
     background-color: #ee7f8e;
-    
-    
+    border-radius: 50px;
+    margin-right: 5px;
+    padding: 0 3px;
 }
 
 .menu li a:hover {
@@ -48,13 +51,207 @@ body {
     text-shadow: 0px 0px 5px #fff;
 }
 
-.menu li:hover ul,
-.menu li.over ul {
+.perfil {
+    background-color: #ee7f8e;
+    border-radius: 50px;
+    padding: 0 3px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1.5em;
+}
+
+.perfil-item {
+    border: 1px solid ee7f8e;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.background-body {
+    background-image: url(celular-banco4.png);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    -webkit-background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow-x: hidden;
+}
+
+.num-usuario {
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* z-index: 0; */
+    background-color: #ee7f8e;
+    border-radius: 50px;
+    margin-right: 5px;
+}
+
+.btn-menu-circle {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #ee7f8e;
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    font-size: 25px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    flex-wrap: wrap;
+    box-shadow: none;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 133px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    background-color: #ee7f8e;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 50px;
+    display: block;
+    margin-top: 2px;
+    text-align: center;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background: #333;
+    color: #fff;
+    -moz-box-shadow: 0 3px 10px 0 #CCC;
+    box-shadow: 0 3px 10px 0 #ccc;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-.menu li ul li {
-    border: 1px solid #c0c0c0;
+/* Corpo */
+.corpo {
+    display: flex;
+    height: auto;
+    width: 99vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 20px;
+    flex: 1;
+
+}
+
+.conteudo {
+    height: 80%;
+    /* margin: 0; */
+    align-items: center;
+}
+
+.extrato {
+    /* Centralizar na vertical e na horizontal */
+    /* position: absolute; */
+    align-items: center;
+    background-color: white;
+
+}
+
+.modelo-extrato {
+    border: 1px solid black;
+    padding: 10px;
+
+}
+
+.modelo-positivo {
+    color: green;
+}
+
+.modelo-negativo {
+    color: red;
+}
+
+.modelo-saldo-positivo {
+    color: blue;
+}
+
+#form-emprestimo {
+    background-color:#e6e8ec;
     display: block;
-    width: 150px;
+    border: #333;
+    border-radius: 5px;
+    margin-bottom: 35px;
+    border-radius: 8px;
+}
+
+.cabecalho-form-emprestimo {
+    display: block;
+}
+
+.modelo-form {
+    border: 1px solid black;
+    padding: 5px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.head-form {
+    /* border: 1px solid black; */
+    background-color: #e6e8ec;
+    color: rgb(22, 20, 20);
+    padding: 12px 16px;
+    text-decoration: none;
+    margin-bottom: 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.explicacao-emprestimo{
+    color: rgb(22, 20, 20);
+    text-decoration: none;
+    margin-bottom: 0;
+    text-align: center;
+    margin-top: -7px;
+}
+
+.botao-simular {
+    background-color: #ee7f8e;
+    border: 1px solid black;
+    color: black;
+    padding: 16px 40px 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    border-radius: 5px;
+
+}
+
+#form-editar-perfil {
+    background-color: #e6e8ec;
+    border: #333;
+    text-decoration: none;
+    border-radius: 5px;
 }
