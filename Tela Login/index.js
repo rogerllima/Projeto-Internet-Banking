@@ -14,7 +14,9 @@ function mostrarFormRegistro() {
     } else {
         registrarUsuario.style.display = 'none';
     }
+    validarUsuario()
 }
+
 function registrarUsuario() {
     let novoNome = document.getElementById('novoNome').value;
     let novoEmail = document.getElementById('novoEmail').value;
@@ -44,14 +46,12 @@ function validarRegistro() {
         document.getElementById('btnEnviarRegistro').removeAttribute('disabled')
     }
     if (novaSenha != novaSenhaRep) {
-        document.getElementById('btnEnviarRegistro').setAttribute('disabled','disabled')
+        document.getElementById('btnEnviarRegistro').setAttribute('disabled', 'disabled')
     }
 }
 
 function efetuarLogin() {
-
-    location.href = '../Tela Menu/tela-menu.html';
-
+    validarUsuario()
 }
 
 function fecharPagina(id) {
@@ -75,4 +75,19 @@ function salvarUsuarios() {
     localStorage.setItem('listaUsuarios', JSON.stringify(lista));
 }
 
+function validarUsuario() {
+    let listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
+    listaUsuarios.forEach(validarContaSenha);
+}
 
+function validarContaSenha() {
+    let numConta = document.getElementById("numConta").value;
+    let senha = document.getElementById("senha").value;
+    let listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
+    for (i = 0; i < listaUsuarios.length; i++) {
+        if (numConta == listaUsuarios[i].numeroConta && senha == listaUsuarios[i].senha) {
+            localStorage.setItem('newUser', JSON.stringify(listaUsuarios[i]));
+            location.href = '../Tela Menu/tela-menu.html';
+        }
+    }
+}
